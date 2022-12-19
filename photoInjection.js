@@ -1,4 +1,41 @@
 const image = document.createElement("img");
+const candidateInfoDivsBig = document.querySelectorAll(
+  "[class^='slug__TC3Inner-sc']"
+);
+const candidateInfoDivsSmall = document.querySelectorAll(
+  "[class^='slug__SingleQA-sc-q1au6a']"
+);
+if(candidateInfoDivsBig.length > 0) {
+  [...candidateInfoDivsBig].forEach((cid) => {
+    cid.classList.add("candidate-info");
+  });
+  const candidatePhotoDivs = document.getElementsByClassName("circle");
+  [...candidatePhotoDivs].forEach((cpd) => {
+    cpd.classList.add("candidate-photo-big");
+  });
+  const candidateNamePs = document.querySelectorAll(
+    "[class^='slug__CName-sc']"
+  );
+  [...candidateNamePs].forEach((cnp) => {
+    cnp.classList.add("candidate-name");
+  });
+} 
+else if(candidateInfoDivsSmall.length > 0) {
+  [...candidateInfoDivsSmall].forEach((cid) => {
+    cid.classList.add("candidate-info");
+  });
+  const candidatePhotoDivs = document.getElementsByClassName("circle");
+  [...candidatePhotoDivs].forEach((cpd) => {
+    cpd.classList.add("candidate-photo-small");
+  });
+  const candidateNamePs = document.querySelectorAll(
+    "[class^='slug__CName-sc']"
+  );
+  [...candidateNamePs].forEach((cnp) => {
+    cnp.classList.add("candidate-name");
+  });
+}
+
 const candidateInfoTags = document.getElementsByClassName("candidate-info");
 [...candidateInfoTags].forEach((cit) => {
   const candidateName =
